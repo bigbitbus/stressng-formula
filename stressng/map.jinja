@@ -1,10 +1,16 @@
 {% set stress = salt['grains.filter_by']({
     'Debian': {
         'package': 'stress-ng',
-        'install_from_source':False
-    },
-    'RedHat': {
-        'package': 'stress',
+        'prereq_packages': ['gcc','make']
         'install_from_source': False
     },
-}, grain='os_family', merge=salt['pillar.get']('stress:lookup'), default='Debian') %}
+    'RedHat': {
+        'package': 'stress-ng',
+        'prereq_packages': ['gcc','make']
+        'install_from_source': False
+    },    
+    'base': {
+        'stressng_source_url':  'http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz'
+    }
+
+}, grain='os_family', merge=salt['pillar.get']('stress:lookup'), default='Debian')%}
