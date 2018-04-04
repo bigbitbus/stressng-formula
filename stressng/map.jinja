@@ -21,9 +21,9 @@
     'RedHat': {
     },    
     'common': {
-        'stressng_path': '/usr/bin/stress-ng'
-        'cmd_cli_args': '--log-file /tmp/stress.log',
-        'job_file': '--job salt://stressng/files/examplejob.stress'
+        'stressng_path': '/usr/bin/stress-ng',
+        'cmd_cli_args': '--log-file /tmp/stress.log --yaml /tmp/stressstat.yaml --timeout 10s',
+        'job_file': 'salt://stressng/files/examplejob.stress'
     }
 
 }, grain='os_family', merge=salt['pillar.get']('execute:lookup'), default='Debian', base='common')%}

@@ -4,12 +4,24 @@
 {% set job_file = exec_stressng_map.get ('job_file','') %}
 check_if_stressng_available:
   cmd.run:
-    - name: {{ stressng_path }}
+    - name: '{{ stressng_path }} -h'
 
 run_stressng:
+  {% if (job_file != '') %}
+  file.managed:
+    - name: /tmp/job.stress
+    - source: {{ job_file }}
+
   cmd.run:
-    - {{ stressng_path }} {{ cli_args}} {{ job_file }}
+    - name: {{ stressng_path }} {{ cli_args}} --job /tmp/job.stress
     - requires:
       - check_if_stressng_available
+      - file.managed
 
+  {% else %}
+  cmd.run:
+    - name: {{ stressng_path }} {{ cli_args}}
+    - requires:
+      - check_if_stressng_available
+ {% endif %}
     

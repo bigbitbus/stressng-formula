@@ -1,9 +1,8 @@
 run sequential
 verbose
 metrics-brief
-cpu 0
-cpu-method fft
-timeout 20
+matrix 1
 verify
 temp-path /tmp
 yaml /tmp/stressstat.yaml
+timeout 10s
