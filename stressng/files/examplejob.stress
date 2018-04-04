@@ -1,0 +1,9 @@
+run sequential
+verbose
+metrics-brief
+cpu 0
+cpu-method fft
+timeout 20
+verify
+temp-path /tmp
+yaml /tmp/stressstat.yaml

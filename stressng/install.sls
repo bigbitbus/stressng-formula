@@ -1,4 +1,4 @@
-{% from "stressng/map.jinja" import stress as stress_map with context %}
+{% from "stressng/map.jinja" import install_stressng as stress_map with context %}
 {% set package = stress_map.get('package', 'stress-ng') %}
 {% set install_from_source = stress_map.get('install_from_source', False) %}
 

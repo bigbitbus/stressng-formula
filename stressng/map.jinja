@@ -1,4 +1,4 @@
-{% set stress = salt['grains.filter_by']({
+{% set install_stressng = salt['grains.filter_by']({
     'Debian': {
         'package': 'stress-ng',
         'prereq_packages': ['gcc','make'],
@@ -14,3 +14,17 @@
     }
 
 }, grain='os_family', merge=salt['pillar.get']('stress:lookup'), default='Debian', base='common')%}
+
+{% set exec_stressng = salt['grains.filter_by']({
+    'Debian': {
+    },
+    'RedHat': {
+    },    
+    'common': {
+        'stressng_path': '/usr/bin/stress-ng'
+        'cmd_cli_args': '--log-file /tmp/stress.log',
+        'job_file': '--job salt://stressng/files/examplejob.stress'
+    }
+
+}, grain='os_family', merge=salt['pillar.get']('execute:lookup'), default='Debian', base='common')%}
+
