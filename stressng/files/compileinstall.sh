@@ -1,8 +1,9 @@
 #!/bin/bash
-set -E
+set -e
+cd /tmp
+tar xf stress-ng-*
 cd /tmp/stress-ng-*
-STATIC=1 make
+make
 cp stress-ng /usr/bin
 cd /tmp
 rm -rf /tmp/stress-*
-stress-ng #To test successful installation for stateful

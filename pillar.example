@@ -2,4 +2,5 @@ stress:
   lookup:
     package: 'stress-ng'
     install_from_source: True
+    stressng_source_url:  "http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz"
 
