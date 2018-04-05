@@ -6,7 +6,7 @@
 
 * stressng.install - to install stressng (from the OS packages - the default,  or from source if the pillar stress:lookup:install_from_source is set). For example:
 ```
-salt my_minion stressng.install pillar='{"stress":{"lookup": {"install_from_source": True}}}
+salt \* state.apply stressng.install pillar='{"stress":{"lookup": {"install_from_source": True}}}'
 ```
 You can also set the stress-ng version via a lookup pillar 'stressng_source_url'; the stress-ng source archives are [available here].(http://kernel.ubuntu.com/~cking/tarballs/stress-ng/)
 
@@ -18,9 +18,10 @@ The final test_id_minion_id.tar.gz archive of the results is stored in the /tmp 
 ```
 test_id: no_test_id
 minion_id: no_minion_id
-timestamp: Thursday April 05 2018 04:42
 command_run: /usr/bin/stress-ng --timeout 10s --yaml /tmp/outputdata/data.yaml --log-file /tmp/outputdata/test.log  --job /tmp/outputdata/job.stress
 ```
+~~timestamp: Thursday April 05 2018 04:42~~ is disabled until e Salt Oxygen fixes strftime/jinja2 issue.
+
 * test.log: stress-ng log file
 ```
 stress-ng: info:  [2714] dispatching hogs: 1 matrix

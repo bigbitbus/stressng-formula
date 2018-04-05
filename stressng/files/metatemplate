@@ -1,5 +1,4 @@
 test_id: {{ test_id }}
 minion_id: {{ minion_id }}
-timestamp: {{ timestamp }}
 command_run: {{ command_run }}
  
