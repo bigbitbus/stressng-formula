@@ -4,5 +4,4 @@ metrics-brief
 matrix 1
 verify
 temp-path /tmp
-yaml /tmp/stressstat.yaml
 timeout 10s
