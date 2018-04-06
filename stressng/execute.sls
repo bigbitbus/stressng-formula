@@ -4,8 +4,8 @@
 {% set job_file = exec_stressng_map.get ('job_file','') %}
 {% set out_dir = exec_stressng_map.get('out_dir','/tmp/outputdata') %}
 {% set base_cmd_list = [stressng_path, cli_args, '--yaml', [out_dir,'/data.yaml'] | join('') , '--log-file', [out_dir,'/test.log'] | join('')  ] %}
-{% set test_id = grains.get('test_id','no_test_id') %}
-{% set minion_id = grains.get('minion_id', 'no_minion_id' ) %}
+{% set test_id = grains.get('test_id','no_test_id_grain') %}
+{% set minion_id = grains.get('host', 'no_hostname_grain' ) %}
 check_and_setup:
   cmd.run:
     - name: '{{ stressng_path }} -h'
