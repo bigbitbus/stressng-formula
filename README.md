@@ -6,7 +6,7 @@
 
 * stressng.install - to install stressng (from the OS packages - the default,  or from source if the pillar stress:lookup:install_from_source is set). For example:
 ```
-salt \* state.apply stressng.install pillar='{"stress":{"lookup": {"install_from_source": True}}}'
+salt \* state.apply stressng.install pillar='{"stressng":{"lookup": {"install_from_source": True}}}'
 ```
 You can also set the stress-ng version via a lookup pillar 'stressng_source_url'; the stress-ng source archives are [available here].(http://kernel.ubuntu.com/~cking/tarballs/stress-ng/)
 
