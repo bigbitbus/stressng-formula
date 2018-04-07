@@ -6,7 +6,6 @@ stressng:
 
 execute:
   lookup:
-    cmdLineOpts: "--matrix 1 -t 20s"
-    jobFile: False
+    jobFile: 'salt://stressng/files/fft.stress'
     
 
