@@ -1,0 +1,8 @@
+run sequential
+verbose
+metrics-brief
+cpu 1
+cpu-method fft
+verify
+temp-path /tmp
+timeout 30s
