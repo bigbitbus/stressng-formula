@@ -68,3 +68,9 @@ verify
 temp-path /tmp
 timeout 10s
 ```
+
+Here is an example of a cli pillar setting for the execute state.
+
+``` 
+salt \* state.apply stressng.install pillar='{'stressng': {'lookup' : {'install_from_source': True }}}'
+```
