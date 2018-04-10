@@ -5,4 +5,4 @@ cpu 1
 cpu-method fft
 verify
 temp-path /tmp
-timeout 300s
+timeout 600s
