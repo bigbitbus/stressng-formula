@@ -2,12 +2,12 @@
     'Debian': {
         'package': 'stress-ng',
         'prereq_packages': ['gcc','make'],
-        'install_from_source': False
+        'install_from_source': True
     },
     'RedHat': {
         'package': 'stress-ng',
         'prereq_packages': ['gcc','make'],
-        'install_from_source': False
+        'install_from_source': True
     },    
     'common': {
         'stressng_source_url':  "http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz"
@@ -22,7 +22,7 @@
     },    
     'common': {
         'stressng_path': '/usr/bin/stress-ng',
-        'cmd_cli_args': '--timeout 10s',
+        'cmd_cli_args': '',
         'job_file': 'salt://stressng/files/examplejob.stress',
         'out_dir' : '/tmp/outputdata'
     }
