@@ -1,8 +1,6 @@
 verbose
 metrics-brief
-hdd 0
-io 4
-hdd-bytes 20%
-hdd-opts direct,sync,wr-rnd,rd-rnd
+iomix 4
+iomix-bytes 50%
 temp-path /
-timeout 60s
+timeout 300s

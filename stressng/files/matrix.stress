@@ -3,4 +3,4 @@ verbose
 metrics-brief
 matrix 0
 temp-path /tmp
-timeout 60s
+timeout 120s

@@ -8,4 +8,4 @@ memcpy 0
 memrate 0
 verify
 temp-path /tmp
-timeout 60s
+timeout 300s
