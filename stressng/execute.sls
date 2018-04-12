@@ -17,7 +17,7 @@ check_and_setup:
 run_stressng_jobfile_{{job_file}}:
   file.managed:
     - name: {{ test_out_dir }}/job.stress
-    - source: {{ job_file }}
+    - source: salt://stressng/files/{{ job_file }}
     - requires: 
       - file.directory  
     - makedirs: True
