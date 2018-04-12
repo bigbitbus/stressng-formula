@@ -1,7 +1,9 @@
+# Higher level algorithms
 run sequential
 verbose
 metrics-brief
-matrix 1
-verify
+radixsort 0
+qsort 0
+bsearch 0
 temp-path /tmp
 timeout 10s

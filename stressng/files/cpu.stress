@@ -1,0 +1,9 @@
+run sequential
+verbose
+metrics-brief
+cpu 0
+cpu-method ackermann,decimal128,factorial,fft,float32,int64,jmp,rand,sqrt,union
+verify
+temp-path /tmp
+timeout 10s
+

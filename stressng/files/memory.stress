@@ -1,0 +1,11 @@
+# Since we didnt specify sequential, the idea is to run a a mix of these operations.
+# Starting 2 workers per test type for the memory.
+verbose
+metrics-brief
+malloc 2
+mcontend 2
+memcpy 2
+memrate 2
+verify
+temp-path /tmp
+timeout 10s

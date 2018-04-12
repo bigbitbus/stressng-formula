@@ -1,0 +1,7 @@
+# Generally good for testing memory, caching and floating point operations.
+run sequential
+verbose
+metrics-brief
+matrix 0
+temp-path /tmp
+timeout 5s

@@ -23,8 +23,8 @@
     'common': {
         'stressng_path': '/usr/bin/stress-ng',
         'cmd_cli_args': '',
-        'job_file': 'salt://stressng/files/examplejob.stress',
         'out_dir' : '/tmp/outputdata'
+        'job_file_list': ['cpu.stress','memory.stress','algorithms.stress','matrix.stress','io.stress']
     }
 
 }, grain='os_family', merge=salt['pillar.get']('execute:lookup'), default='Debian', base='common')%}
