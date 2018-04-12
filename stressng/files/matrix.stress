@@ -1,6 +1,6 @@
 # Generally good for testing memory, caching and floating point operations.
 verbose
-metrics-brief
+metrics
 matrix 0
-temp-path /tmp
-timeout 120s
+temp-path /
+timeout 300s

@@ -1,9 +1,12 @@
 # Higher level algorithms
 run sequential
 verbose
-metrics-brief
+metrics
 radixsort 0
+heapsort 0
 qsort 0
 bsearch 0
-temp-path /tmp
+lsearch 0
+mergesort 0
+temp-path /
 timeout 60s
