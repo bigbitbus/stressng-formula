@@ -1,6 +1,6 @@
 verbose
-metrics-brief
-iomix 4
-iomix-bytes 10%
+metrics
+hdd 0
+aggressive
 temp-path /
-timeout 100s
+timeout 300s
