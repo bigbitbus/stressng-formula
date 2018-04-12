@@ -16,7 +16,7 @@ check_and_setup:
 
 run_stressng_jobfile_{{job_file}}:
   file.managed:
-    - name: {{ test_out_dir }}/job.data
+    - name: {{ test_out_dir }}/job.stress
     - source: {{ job_file }}
     - requires: 
       - file.directory  
@@ -25,7 +25,7 @@ run_stressng_jobfile_{{job_file}}:
 {% set base_cmd_list = [stressng_path, cli_args, '--yaml', [test_out_dir,'/data.yaml']|join('') , '--log-file', [test_out_dir,'/test.log'] | join('')  ] %}  
 
   cmd.run:
-    - name: {{ base_cmd_list | join(' ') }}  --job {{ out_dir }}/job.stress
+    - name: {{ base_cmd_list | join(' ') }}  --job {{ test_out_dir }}/job.stress
     - requires:
       - check_and_setup
       - file.managed
