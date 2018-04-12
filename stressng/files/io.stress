@@ -1,6 +1,6 @@
 verbose
 metrics-brief
 iomix 4
-iomix-bytes 50%
+iomix-bytes 10%
 temp-path /
-timeout 300s
+timeout 100s

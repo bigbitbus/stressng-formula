@@ -6,4 +6,4 @@ radixsort 0
 qsort 0
 bsearch 0
 temp-path /tmp
-timeout 10s
+timeout 60s
