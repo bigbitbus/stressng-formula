@@ -1,9 +1,8 @@
-run sequential
 verbose
 metrics-brief
 cpu 0
 cpu-method all
 verify
 temp-path /tmp
-timeout 1s
+timeout 60s
 

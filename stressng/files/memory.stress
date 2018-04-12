@@ -2,10 +2,10 @@
 # Starting 2 workers per test type for the memory.
 verbose
 metrics-brief
-malloc 2
-mcontend 2
-memcpy 2
-memrate 2
+malloc 0
+mcontend 0
+memcpy 0
+memrate 0
 verify
 temp-path /tmp
-timeout 10s
+timeout 60s

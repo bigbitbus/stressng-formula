@@ -5,4 +5,4 @@ io 4
 hdd-bytes 20%
 hdd-opts direct,sync,wr-rnd,rd-rnd
 temp-path /
-timeout 10s
+timeout 60s
