@@ -12,10 +12,9 @@ check_and_setup:
     - name: {{ out_dir }}
 
 {% for job_file in job_file_list %}
-{% set starttime = salt['cmd.run']('date +%s') %}
 {% set test_out_dir = [out_dir,job_file] | join('/') %}
 
-run_stressng_jobfile:
+run_stressng_jobfile_{{job_file}}:
   file.directory:
     - name: {{ test_out_dir }}
     - makedirs: True
@@ -34,16 +33,6 @@ run_stressng_jobfile:
       - check_and_setup
       - file.directory
       - file.managed
-
-{% set endtime = salt['cmd.run']('date +%s') %}
-
-  file.append:
-     - name: {{ test_out_dir }}/job.data
-     - text:
-       - start_timestamp {{ starttime }}
-       - end_timestamp {{ endtime }}
-     - requires:
-       - cmd.run
 
 {% endfor %}
 
