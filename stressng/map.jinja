@@ -27,5 +27,5 @@
         'job_file_list': ['cpu.stress','memory.stress','algorithms.stress','matrix.stress','io.stress']
     }
 
-}, grain='os_family', merge=salt['pillar.get']('execute:lookup'), default='Debian', base='common')%}
+}, grain='os_family', merge=salt['pillar.get']('stressng:execute:lookup'), default='Debian', base='common')%}
 
