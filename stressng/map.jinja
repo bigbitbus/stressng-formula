@@ -13,7 +13,7 @@
         'stressng_source_url':  "http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz"
     }
 
-}, grain='os_family', merge=salt['pillar.get']('stressng:lookup'), default='Debian', base='common')%}
+}, grain='os_family', merge=salt['pillar.get']('stressng:install:lookup'), default='Debian', base='common')%}
 
 {% set exec_stressng = salt['grains.filter_by']({
     'Debian': {

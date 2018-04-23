@@ -1,15 +1,17 @@
 stressng:
-  lookup:
-    package: 'stress-ng'
-    install_from_source: True
-    stressng_source_url:  "http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz"
+  install:
+    lookup:
+      package: 'stress-ng'
+      install_from_source: True
+      stressng_source_url:  "http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.23.tar.xz"
 
-execute:
-  lookup:
-    out_dir: '/tmp/outputdata'
-    job_file_list: 
-      - cpu.stress
-      - memory.stress
-      - algorithms.stress
-      - matrix.stress
-      - io.stress
+stressng:
+  execute:
+    lookup:
+      out_dir: '/tmp/outputdata'
+      job_file_list: 
+        - cpu.stress
+        - memory.stress
+        - algorithms.stress
+        - matrix.stress
+        - io.stress
