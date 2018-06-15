@@ -3,4 +3,4 @@ verbose
 metrics
 matrix 0
 temp-path /
-timeout 30s
+timeout 300s
