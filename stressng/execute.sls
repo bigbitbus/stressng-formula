@@ -33,8 +33,8 @@ run_stressng_jobfile_{{job_file}}:
       - check_and_setup
       - file.managed
     - name: >
-      {{ base_cmd_list | join(' ') }}  
-      --job {{ test_out_dir }}/{{ job_file }}
+        {{ base_cmd_list | join(' ') }}  
+        --job {{ test_out_dir }}/{{ job_file }}
     
 
 {% endfor %}
