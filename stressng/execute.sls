@@ -28,12 +28,13 @@ run_stressng_jobfile_{{job_file}}:
   '--log-file', [test_out_dir,'/run.log'] | join('')  ] %}  
 
   cmd.run:
-    - name: >
-      {{ base_cmd_list | join(' ') }}  
-      --job {{ test_out_dir }}/{{ job_file }}
+    - cwd: {{ test_out_dir }}
     - requires:
       - check_and_setup
       - file.managed
-    - cwd: {{ test_out_dir }}
+    - name: >
+      {{ base_cmd_list | join(' ') }}  
+      --job {{ test_out_dir }}/{{ job_file }}
+    
 
 {% endfor %}
