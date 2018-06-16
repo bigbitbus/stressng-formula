@@ -23,8 +23,8 @@ run_stressng_jobfile_{{job_file}}:
     - makedirs: True
 
 {% set base_cmd_list = 
-  [stressng_path, cli_args, '--yaml', 
-  [test_out_dir,'/',{{ job_file }},'-data.yaml']|join('') , 
+  [stressng_path, cli_args, 
+  '--yaml', [test_out_dir,'/',job_file,'-data.yaml']|join(''), 
   '--log-file', [test_out_dir,'/run.log'] | join('')  ] %}  
 
   cmd.run:
@@ -37,7 +37,3 @@ run_stressng_jobfile_{{job_file}}:
     - cwd: {{ test_out_dir }}
 
 {% endfor %}
-
-
-
-    
