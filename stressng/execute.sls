@@ -16,19 +16,25 @@ check_and_setup:
 
 run_stressng_jobfile_{{job_file}}:
   file.managed:
-    - name: {{ test_out_dir }}/job.stress
+    - name: {{ test_out_dir }}/{{ job_file }}
     - source: salt://stressng/files/{{ job_file }}
     - requires: 
       - file.directory  
     - makedirs: True
 
-{% set base_cmd_list = [stressng_path, cli_args, '--yaml', [test_out_dir,'/data.yaml']|join('') , '--log-file', [test_out_dir,'/test.log'] | join('')  ] %}  
+{% set base_cmd_list = 
+  [stressng_path, cli_args, '--yaml', 
+  [test_out_dir,'/',{{ job_file }},'-data.yaml']|join('') , 
+  '--log-file', [test_out_dir,'/run.log'] | join('')  ] %}  
 
   cmd.run:
-    - name: {{ base_cmd_list | join(' ') }}  --job {{ test_out_dir }}/job.stress
+    - name: >
+      {{ base_cmd_list | join(' ') }}  
+      --job {{ test_out_dir }}/{{ job_file }}
     - requires:
       - check_and_setup
       - file.managed
+    - cwd: {{ test_out_dir }}
 
 {% endfor %}
 

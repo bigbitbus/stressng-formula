@@ -1,0 +1,9 @@
+verbose
+metrics
+cpu 0
+cpu-method all
+verify
+temp-path /
+timeout 300s
+cpu-load 10
+

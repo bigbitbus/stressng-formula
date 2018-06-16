@@ -5,5 +5,5 @@ cpu-method all
 verify
 temp-path /
 timeout 300s
-cpu-load 25
+cpu-load 30
 
