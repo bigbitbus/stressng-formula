@@ -14,7 +14,7 @@ check_and_setup:
 {% for job_file in job_file_list %}
 {% set test_out_dir = [out_dir,job_file] | join('/') %}
 
-run_stressng_jobfile_{{job_file}}:
+create_job_directory_{{job_file}}:
   file.managed:
     - name: {{ test_out_dir }}/{{ job_file }}
     - source: salt://stressng/files/{{ job_file }}
@@ -22,6 +22,7 @@ run_stressng_jobfile_{{job_file}}:
       - file.directory  
     - makedirs: True
 
+run_stressng_jobfile_{{job_file}}:
 {% set base_cmd_list = 
   [stressng_path, cli_args, 
   '--yaml', [test_out_dir,'/',job_file,'-data.yaml']|join(''), 
@@ -31,7 +32,7 @@ run_stressng_jobfile_{{job_file}}:
     - cwd: {{ test_out_dir }}
     - requires:
       - check_and_setup
-      - file.managed
+      - create_job_directory_{{job_file}}
     - names: 
       - >
         {{ base_cmd_list | join(' ') }}  

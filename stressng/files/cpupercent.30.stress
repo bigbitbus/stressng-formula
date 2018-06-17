@@ -4,6 +4,6 @@ cpu 0
 cpu-method all
 verify
 temp-path /
-timeout 10s
+timeout 360s
 cpu-load 30
 
