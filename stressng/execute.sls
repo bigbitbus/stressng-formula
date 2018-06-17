@@ -32,9 +32,12 @@ run_stressng_jobfile_{{job_file}}:
     - requires:
       - check_and_setup
       - file.managed
-    - name: >
+    - names: 
+      - >
         {{ base_cmd_list | join(' ') }}  
         --job {{ test_out_dir }}/{{ job_file }}
-    
+      - sleep 2
+  
+  
 
 {% endfor %}
